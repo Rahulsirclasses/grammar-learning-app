@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "CAT Grammar",
   },
-  title: "Grammar Pro â€“ by Rahul Sir Classes",
+  title: "Grammar Pro - by Rahul Sir Classes",
   description: "Learn English grammar for competitive exams like CAT and GMAT",
   generator: 'v0.app'
 }
