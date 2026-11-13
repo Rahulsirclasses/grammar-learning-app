@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import React from "react"
 
@@ -36,6 +36,7 @@ import {
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { triggerPWAInstall } from "@/components/pwa-install"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -245,13 +246,23 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
                 <Search className="h-4 w-4 mr-2" />
                 Search...
                 <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                  <span className="text-xs">⌘</span>K
+                  <span className="text-xs">âŒ˜</span>K
                 </kbd>
               </Button>
             )}
           </div>
 
           <div className="flex items-center gap-1 sm:gap-3">
+            {/* PWA Install Button */}
+            <button
+              onClick={triggerPWAInstall}
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-400/40 text-emerald-600 hover:text-emerald-700 dark:text-emerald-300 dark:hover:text-white text-xs font-bold transition"
+              title="Install App"
+            >
+              <Download className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Install</span>
+              <span className="text-[10px] bg-emerald-500/30 px-1 rounded">APK</span>
+            </button>
             <Button variant="ghost" size="icon" className="relative md:flex hidden">
               <Bell className="h-5 w-5" />
               <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-600"></span>
@@ -410,3 +421,4 @@ export default function DashboardLayout({ children, user }: DashboardLayoutProps
     </div>
   )
 }
+
